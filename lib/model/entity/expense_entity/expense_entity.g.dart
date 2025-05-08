@@ -1,18 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'transaction_model.dart';
+part of 'expense_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) =>
-    _TransactionModel(
+_ExpenseEntity _$ExpenseEntityFromJson(Map<String, dynamic> json) =>
+    _ExpenseEntity(
       id: json['id'] as String,
-      type: json['type'] as String,
-      amount: (json['amount'] as num).toDouble(),
+      amount: Money.fromJson(json['amount'] as Map<String, dynamic>),
       category: json['category'] as String,
-      memo: json['memo'] as String?,
+      memo: json['memo'] as String,
       date: DateTime.parse(json['date'] as String),
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt:
@@ -21,10 +20,9 @@ _TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) =>
               : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$TransactionModelToJson(_TransactionModel instance) =>
+Map<String, dynamic> _$ExpenseEntityToJson(_ExpenseEntity instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'type': instance.type,
       'amount': instance.amount,
       'category': instance.category,
       'memo': instance.memo,
